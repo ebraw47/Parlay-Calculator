@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 245, 245, 245;
+  --background-start-rgb: 10, 10, 10;
+  --background-end-rgb: 18, 18, 18;
+  --accent: #d4af37;
+  --brand: #0a0a0a;
+  --pink: #d4af37;
+  --violet: #d4af37;
+  --mint: #f5c518;
+  --gold: #d4af37;
+  --forest: #141414;
+  --emerald: #c9a227;
+  color-scheme: dark;
+  background-color: #0a0a0a;
+}
+
+html {
+  background-color: #0a0a0a;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: #0a0a0a;
+  background: #0a0a0a;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+  contain: layout;
+}
+
+.download-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+}
+
+.download-btn:hover .download-icon {
+  animation: bounce 0.5s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes float-glow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+    opacity: 0.85;
+  }
+}
+
+.site-atmosphere {
+  background-color: #0a0a0a;
+  background-image:
+    radial-gradient(ellipse 90% 60% at 12% -10%, rgba(212, 175, 55, 0.18), transparent 55%),
+    radial-gradient(ellipse 80% 50% at 90% 0%, rgba(245, 197, 24, 0.1), transparent 52%),
+    radial-gradient(ellipse 70% 45% at 50% 110%, rgba(212, 175, 55, 0.08), transparent 55%),
+    linear-gradient(180deg, #111111 0%, #0a0a0a 42%, #050505 100%);
+}
+
+.brand-gradient-text {
+  background: linear-gradient(120deg, #ffffff 0%, #f5c518 42%, #d4af37 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-glow {
+  animation: float-glow 7s ease-in-out infinite;
+}
+
+.calc-input::-webkit-outer-spin-button,
+.calc-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.calc-input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.calc-shell {
+  animation: fade-up 0.55s ease-out both;
+}
+
+/* Day mode: base text is dark so inherited copy stays readable on cream panels */
+[data-calc-theme="day"] {
+  color: #1c1917;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.trust-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: rgba(20, 20, 20, 0.9);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8125rem;
+  color: rgba(245, 245, 245, 0.72);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
